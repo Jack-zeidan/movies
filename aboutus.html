@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09142d;
+            margin: 0px;
+            color:white;
+        }
+        #nav {
+            background-color: black;
+            padding: 1px;
+            display: flex;
+            height: 40px;
+            position: sticky;
+            top: 0px;
+            align-items: center;
+        }
+        #nav h1 {
+            margin-left: 15px;
+            width: 45px;
+            display:inline-block;
+            color: #B4CDED;
+        }
+        #nav input {
+            margin: 0 auto;
+            border: 2px solid black;
+            padding-left:15px;
+            border-radius: 15px;
+            height: 25px;
+            width: 500px;
+            cursor: not-allowed;
+        }
+        #nav input::placeholder {
+            opacity: 0.7;
+        }
+        i {
+            margin: auto;
+            margin-right: 40px;
+            color: white;
+        }
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: #B4CDED;
+            margin: 6px 0;
+            transition: 0.4s;
+            margin-right: 15px;
+        }
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+        .change .bar2 {
+            opacity: 0;
+        }
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: blue;
+            min-width: 145px;
+            z-index: 1;
+            left: -100px;
+            opacity: 0;
+            margin-right:0px;
+            border: 1px solid black;
+            border-radius: 10px;
+
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: skyblue;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .dropdown .show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+       <a href="index.html"><H1>Movies</H1></a>
+        <input type="text" id="ser" placeholder="Search for your favourite movie, TV show, actor.">
+        <div class="dropdown">
+            <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
